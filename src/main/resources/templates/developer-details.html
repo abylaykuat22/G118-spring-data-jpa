@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form action="/developer/update" method="post">
+  <input type="hidden" th:value="${razrab.id}" name="id">
+  <input type="text" th:value="${razrab.email}" name="email"><br>
+  <input type="text" th:value="${razrab.fullName}" name="fullName"><br>
+  <input type="number" th:value="${razrab.age}" name="age"><br>
+  <input type="text" th:value="${razrab.progLang}" name="progLang"><br>
+  <button>SAVE CHANGES</button>
+</form>
+</body>
+</html>
