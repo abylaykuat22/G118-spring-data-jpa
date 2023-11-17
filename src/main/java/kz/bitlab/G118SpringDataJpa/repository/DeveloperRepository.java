@@ -13,6 +13,6 @@ public interface DeveloperRepository extends JpaRepository<Developer, Long> {
   @Query("SELECT d FROM Developer d "
       + "WHERE d.fullName ilike concat('%', :search, '%') "
       + "OR d.email ilike concat('%', :search, '%') "
-      + "OR d.progLang ilike concat('%', :search, '%') ")
+      + "OR d.programmingLanguage.name ilike concat('%', :search, '%') ")
   List<Developer> findAllByText(String search);
 }

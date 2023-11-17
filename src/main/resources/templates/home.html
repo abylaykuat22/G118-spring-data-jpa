@@ -14,7 +14,11 @@
   <input type="text" placeholder="Insert full name.." name="fullName"><br>
   <input type="text" placeholder="Insert email..." name="email"><br>
   <input type="number" placeholder="Insert age..." name="age"><br>
-  <input type="text" placeholder="Insert programming language" name="progLang"><br>
+  <select name="programmingLanguage.id">
+    <option th:each="lang : ${programmingLanguages}"
+            th:value="${lang.id}"
+            th:text="${lang.name}"></option>
+  </select>
   <button>ADD DEVELOPER</button>
 </form>
   <table cellpadding="10px">
@@ -31,7 +35,7 @@
         <td th:text="${razrab.id}"></td>
         <td th:text="${razrab.fullName}"></td>
         <td th:text="${razrab.age}"></td>
-        <td th:text="${razrab.progLang}"></td>
+        <td th:text="${razrab.programmingLanguage.name}"></td>
         <td><a th:href="${'/developer/'+razrab.id}">DETAILS</a></td>
         <td><a th:href="${'/developer/details/'+razrab.email}">DETAILS BY EMAIL</a></td>
       </tr>
